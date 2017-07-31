@@ -19,7 +19,6 @@ $(document).ready(function(){
    var frequency = "";
 
 
-  // 2. Button for adding Trains
   $("#add-Train").on("click", function(){
 
     event.preventDefault();
@@ -36,6 +35,7 @@ $(document).ready(function(){
     console.log(timeInput);
     console.log(frequencyInput);
 
+    // push to firebase
     database.ref().push({
     name:  trainName,
     destination: destination,
@@ -49,12 +49,12 @@ $(document).ready(function(){
     $("#destination-Input").val("");
     $("#time-Input").val("");
     $("#frequency-Input").val("");
-    // Prevents page from refreshing
+    // Prevent page from refreshing
     return false;
 
 });
 
-
+    //additional entries (children)
   database.ref().on("child_added", function(snapshot){
 
     // assign firebase variables to snapshots.

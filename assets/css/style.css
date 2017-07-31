@@ -1,0 +1,45 @@
+body {
+    background-image: url("../images/traintrack.jpg");
+    background-repeat: no-repeat;
+    background: cover;
+}
+
+
+#mainArea {
+    margin-top: 500px;
+}
+
+#tbody,
+#tschedule {
+    background: black
+}
+
+#clock {
+    color: white;
+    font-size: 20px;
+    margin-top: -150px;
+    margin-right: 80px;
+    margin-bottom: 95px;
+}
+
+.form-group,
+#table {
+    color: white;
+}
+
+tr {
+    color: white;
+}
+
+#left {
+    margin-left: 40px;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+#right {
+    margin-right: 32px;
+    font-size: 18px;
+    position: fixed;
+    margin-top: 50px;
+}

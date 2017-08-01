@@ -14,6 +14,7 @@ body {
     background: black
 }
 
+
 #clock {
     color: white;
     font-size: 20px;
@@ -31,7 +32,52 @@ tr {
     color: white;
 }
 
-#left {
+/*#left {
+    margin-left: 40px;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+
+#right {
+    margin-right: 32px;
+    font-size: 18px;
+    margin-top: 50px;
+}*/
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+        #clock {
+    font-size: 20px;
+    margin-top: -100px;
+    margin-right: 50px;
+    margin-bottom: 45px;
+}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    #left {
     margin-left: 40px;
     font-size: 18px;
     margin-top: 50px;
@@ -40,6 +86,7 @@ tr {
 #right {
     margin-right: 32px;
     font-size: 18px;
-    position: fixed;
     margin-top: 50px;
+}
+
 }

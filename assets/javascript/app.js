@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-   // Initialize Firebase
+// Initialize Firebase
   var config = {
     apiKey: "AIzaSyAcjHtLeWhqqbpcDeRWuODK8po2Qh9IDwI",
     authDomain: "project1-806c5.firebaseapp.com",
@@ -10,7 +10,7 @@ $(document).ready(function(){
     messagingSenderId: "437558646660"
   };
   firebase.initializeApp(config);
-
+// Create a variable to reference the database
   var database= firebase.database();
 
    var name = "";
@@ -18,12 +18,12 @@ $(document).ready(function(){
    var trainTime = "";
    var frequency = "";
 
-
-  $("#add-Train").on("click", function(){
+// Whenever a user clicks the add train submit button
+  $("#add-Train").on("click", function(event){
 
     event.preventDefault();
 
-    // Grabs user input and assign to variables
+    // Grabs users input values and assigns them to a variable, with no white space (.trim())
     var trainName = $("#name-Input").val().trim();
     var destination = $("#destination-Input").val().trim();
     var timeInput = moment($("#time-Input").val().trim(), "HH:mm").subtract(10, "years").format("X");
@@ -35,7 +35,7 @@ $(document).ready(function(){
     console.log(timeInput);
     console.log(frequencyInput);
 
-    // push to firebase
+    // push the variable's values to firebase
     database.ref().push({
     name:  trainName,
     destination: destination,
@@ -44,7 +44,7 @@ $(document).ready(function(){
     dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
-    // clear text-boxes
+    // clear text-boxes for next entry
     $("#name-Input").val("");
     $("#destination-Input").val("");
     $("#time-Input").val("");
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
 });
 
-    //additional entries (children)
+    //additional entries from user inputs (children)
   database.ref().on("child_added", function(snapshot){
 
     // assign firebase variables to snapshots.
